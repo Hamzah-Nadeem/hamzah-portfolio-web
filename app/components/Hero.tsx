@@ -244,35 +244,6 @@ export const Hero = () => {
           }}
         />
 
-        {/* Dynamic floating orbs */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [0, i % 2 === 0 ? 30 : -30, 0],
-              x: [0, i % 3 === 0 ? 20 : -20, 0],
-              opacity: [0.4, 0.7, 0.4],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 5 + i * 2,
-              repeat: Infinity,
-              repeatType: 'mirror',
-              ease: 'easeInOut',
-              delay: i * 0.5,
-            }}
-            className="absolute rounded-full"
-            style={{
-              background: COLORS[i % COLORS.length],
-              top: `${15 + Math.random() * 70}%`,
-              left: `${15 + Math.random() * 70}%`,
-              width: `${20 + Math.random() * 60}px`,
-              height: `${20 + Math.random() * 60}px`,
-              filter: 'blur(40px)',
-            }}
-          />
-        ))}
-
         {/* Grid pattern overlay for texture */}
         <div
           className="absolute inset-0 opacity-10"

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from 'react';
 import {
   motion,
   useMotionValue,
@@ -8,11 +8,11 @@ import {
   animate,
   useScroll,
   useTransform,
-} from "framer-motion";
-import Image from "next/image";
+} from 'framer-motion';
+import Image from 'next/image';
 
-import chart1 from "./assets/github-1.jpg";
-import chart2 from "./assets/github-2.jpg";
+import chart1 from './assets/github-1.jpg';
+import chart2 from './assets/github-2.jpg';
 
 export const Contact = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,9 +22,9 @@ export const Contact = () => {
 
   // Contact information
   const contactInfo = {
-    email: "hamzanadeem430@gmail.com",
-    phone: "+92 3204455315",
-    linkedin: "https://linkedin.com/in/yourprofile",
+    email: 'hamzanadeem430@gmail.com',
+    phone: '+92 3204455315',
+    linkedin: 'https://www.linkedin.com/in/hamzah-nadeem-734a8521a',
     // Remove direct GitHub link
   };
 
@@ -35,23 +35,23 @@ export const Contact = () => {
   }, []);
 
   // Color animation
-  const color = useMotionValue("#8B5CF6"); // Purple
-  const altColor = useMotionValue("#6D28D9"); // Darker purple
+  const color = useMotionValue('#8B5CF6'); // Purple
+  const altColor = useMotionValue('#6D28D9'); // Darker purple
 
   useEffect(() => {
     if (isMounted) {
-      animate(color, ["#8B5CF6", "#A855F7", "#6D28D9", "#7C3AED"], {
-        ease: "easeInOut",
+      animate(color, ['#8B5CF6', '#A855F7', '#6D28D9', '#7C3AED'], {
+        ease: 'easeInOut',
         duration: 8,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: 'reverse',
       });
 
-      animate(altColor, ["#6D28D9", "#4C1D95", "#7C3AED", "#5B21B6"], {
-        ease: "easeInOut",
+      animate(altColor, ['#6D28D9', '#4C1D95', '#7C3AED', '#5B21B6'], {
+        ease: 'easeInOut',
         duration: 10,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: 'reverse',
       });
     }
   }, [isMounted]);
@@ -64,7 +64,7 @@ export const Contact = () => {
   // Parallax effect
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ['start end', 'end start'],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -115,7 +115,7 @@ export const Contact = () => {
       {/* Decorative elements */}
       <motion.div
         className="absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-20"
-        style={{ backgroundColor: "#A855F7" }}
+        style={{ backgroundColor: '#A855F7' }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.2, 0.3, 0.2],
@@ -123,13 +123,13 @@ export const Contact = () => {
         transition={{
           duration: 8,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: 'reverse',
         }}
       />
 
       <motion.div
         className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl opacity-10"
-        style={{ backgroundColor: "#8B5CF6" }}
+        style={{ backgroundColor: '#8B5CF6' }}
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.1, 0.2, 0.1],
@@ -137,7 +137,7 @@ export const Contact = () => {
         transition={{
           duration: 10,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: 'reverse',
         }}
       />
 
@@ -161,7 +161,7 @@ export const Contact = () => {
             <motion.span
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-purple-400 rounded-full"
               initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
+              whileInView={{ width: '80%' }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             />
@@ -196,7 +196,7 @@ export const Contact = () => {
               >
                 <motion.div
                   className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-20"
-                  style={{ backgroundColor: "#A855F7" }}
+                  style={{ backgroundColor: '#A855F7' }}
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.1, 0.2, 0.1],
@@ -204,7 +204,7 @@ export const Contact = () => {
                   transition={{
                     duration: 5,
                     repeat: Infinity,
-                    repeatType: "reverse",
+                    repeatType: 'reverse',
                   }}
                 />
 
@@ -238,18 +238,18 @@ export const Contact = () => {
 
                 <motion.div
                   className="bg-white/5 border border-purple-500/20 rounded-lg p-4 flex items-center justify-between relative"
-                  whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                  whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 >
                   <span className="text-purple-100 font-medium break-all">
                     {contactInfo.email}
                   </span>
                   <motion.button
-                    onClick={() => handleCopy(contactInfo.email, "email")}
+                    onClick={() => handleCopy(contactInfo.email, 'email')}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="ml-2 p-2 rounded-md bg-purple-800/50 text-white"
                   >
-                    {copied === "email" ? (
+                    {copied === 'email' ? (
                       <svg
                         className="w-5 h-5 text-green-400"
                         fill="none"
@@ -308,7 +308,7 @@ export const Contact = () => {
               >
                 <motion.div
                   className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-3xl opacity-20"
-                  style={{ backgroundColor: "#8B5CF6" }}
+                  style={{ backgroundColor: '#8B5CF6' }}
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.1, 0.2, 0.1],
@@ -316,7 +316,7 @@ export const Contact = () => {
                   transition={{
                     duration: 5,
                     repeat: Infinity,
-                    repeatType: "reverse",
+                    repeatType: 'reverse',
                   }}
                 />
 
@@ -350,18 +350,18 @@ export const Contact = () => {
 
                 <motion.div
                   className="bg-white/5 border border-purple-500/20 rounded-lg p-4 flex items-center justify-between"
-                  whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                  whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 >
                   <span className="text-purple-100 font-medium">
                     {contactInfo.phone}
                   </span>
                   <motion.button
-                    onClick={() => handleCopy(contactInfo.phone, "phone")}
+                    onClick={() => handleCopy(contactInfo.phone, 'phone')}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="ml-2 p-2 rounded-md bg-purple-800/50 text-white"
                   >
-                    {copied === "phone" ? (
+                    {copied === 'phone' ? (
                       <svg
                         className="w-5 h-5 text-green-400"
                         fill="none"
@@ -394,7 +394,7 @@ export const Contact = () => {
                 </motion.div>
 
                 <motion.a
-                  href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+                  href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
                   className="mt-6 inline-block w-full text-center py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -421,8 +421,8 @@ export const Contact = () => {
               className="p-4 bg-white/5 backdrop-blur-sm rounded-full border border-purple-500/30 text-purple-300 hover:text-white"
               whileHover={{
                 scale: 1.1,
-                backgroundColor: "rgba(139, 92, 246, 0.3)",
-                boxShadow: "0 0 15px rgba(139, 92, 246, 0.5)",
+                backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                boxShadow: '0 0 15px rgba(139, 92, 246, 0.5)',
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -437,8 +437,8 @@ export const Contact = () => {
               className="p-4 bg-white/5 backdrop-blur-sm rounded-full border border-purple-500/30 text-purple-300 hover:text-white"
               whileHover={{
                 scale: 1.1,
-                backgroundColor: "rgba(139, 92, 246, 0.3)",
-                boxShadow: "0 0 15px rgba(139, 92, 246, 0.5)",
+                backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                boxShadow: '0 0 15px rgba(139, 92, 246, 0.5)',
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -460,7 +460,7 @@ export const Contact = () => {
         >
           <motion.div
             className="bg-gray-900/90 backdrop-blur-md border border-purple-500/30 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-            style={{ boxShadow: "0 0 25px rgba(139, 92, 246, 0.3)" }}
+            style={{ boxShadow: '0 0 25px rgba(139, 92, 246, 0.3)' }}
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
@@ -518,7 +518,7 @@ export const Contact = () => {
                             width={800}
                             height={450}
                             className="drop-shadow-[0_0_25px_rgba(168,85,247,0.4)] max-w-full h-auto rounded"
-                            style={{ objectFit: "contain" }}
+                            style={{ objectFit: 'contain' }}
                           />
                         </div>
                         <div className="max-w-full">
@@ -528,7 +528,7 @@ export const Contact = () => {
                             width={800}
                             height={450}
                             className="drop-shadow-[0_0_25px_rgba(168,85,247,0.4)] max-w-full h-auto rounded"
-                            style={{ objectFit: "contain" }}
+                            style={{ objectFit: 'contain' }}
                           />
                         </div>
                       </div>

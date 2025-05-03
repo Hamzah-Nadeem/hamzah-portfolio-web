@@ -23,7 +23,7 @@ interface Contribution {
   title: string;
   description: string;
   link?: string;
-  screenshot?: string | StaticImageData; // Add StaticImageData as a possible type
+  screenshot?: string;
 }
 
 interface Project {
@@ -70,7 +70,7 @@ const projectsData: Project[] = [
     title: 'Bayut SA',
     linking: 'https://www.bayut.sa/en/',
     linking1: 'visit website',
-    company: 'Property Finder Group',
+    company: 'Dubizzle Group',
     description:
       'Bayut is a digital property marketplace that allows users to buy, sell, and rent residential and commercial properties. The platform provides listings for apartments, villas, offices, lands, and other real estate properties throughout Saudi Arabia.',
     image: bayutLogo,
