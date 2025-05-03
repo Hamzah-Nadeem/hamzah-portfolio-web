@@ -190,8 +190,7 @@ export const Contact = () => {
             >
               <motion.div
                 className="bg-white/10 backdrop-blur-sm p-8 rounded-xl h-full relative overflow-hidden"
-                style={{ border: borderColor }}
-                whileHover={{ boxShadow: borderGlow }}
+                style={{ border: borderColor, boxShadow: borderGlow }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.div
@@ -302,8 +301,7 @@ export const Contact = () => {
             >
               <motion.div
                 className="bg-white/10 backdrop-blur-sm p-8 rounded-xl h-full relative overflow-hidden"
-                style={{ border: borderColor }}
-                whileHover={{ boxShadow: borderGlow }}
+                style={{ border: borderColor, boxShadow: borderGlow }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.div
