@@ -32,9 +32,9 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'Saad Sheikh',
+    name: 'Sheikh Muhammad Saad',
     role: 'Senior Product Designer',
-    company: 'Property Finder',
+    company: 'Dubizzle Labs',
     avatar: saad,
     content:
       "Hamza is an outstanding developer who brings designs to life with remarkable precision and attention to detail. He doesn't just code - he enhances the vision with thoughtful improvements and technical solutions that elevate the final product. His work on our property dashboard interface was simply outstanding.",
