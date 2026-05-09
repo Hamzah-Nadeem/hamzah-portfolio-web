@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import profilepic from './assets/profile-5.png';
-import obj1 from './assets/pic-6.jpeg';
-import obj2 from './assets/pic-8.jpg';
-import { useEffect, useState } from 'react';
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import Image from "next/image";
+import profilepic from "./assets/profile-5.png";
+import obj1 from "./assets/pic-6.jpeg";
+import obj2 from "./assets/pic-8.jpg";
+import { useEffect, useState } from "react";
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 import {
   useMotionValue,
@@ -13,10 +13,10 @@ import {
   useMotionTemplate,
   motion,
   AnimatePresence,
-} from 'framer-motion';
+} from "framer-motion";
 
 // Enhanced color palette with more vibrant purples
-const COLORS = ['#A259FF', '#7C3AED', '#6D28D9', '#8B5CF6', '#9333EA'];
+const COLORS = ["#A259FF", "#7C3AED", "#6D28D9", "#8B5CF6", "#9333EA"];
 
 export const Hero = () => {
   const color = useMotionValue(COLORS[0]);
@@ -25,18 +25,18 @@ export const Hero = () => {
 
   useEffect(() => {
     animate(color, COLORS, {
-      ease: 'easeInOut',
+      ease: "easeInOut",
       duration: 15,
       repeat: Infinity,
-      repeatType: 'mirror',
+      repeatType: "mirror",
     });
 
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, ${color}, #10041F 85%)`;
@@ -66,7 +66,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          style={{ marginTop: '20px' }}
+          style={{ marginTop: "20px" }}
           className="mb-4 inline-block rounded-full bg-purple-900/30 px-4 py-2 text-sm border border-purple-400/40 backdrop-blur-md shadow-lg"
         >
           <motion.span
@@ -87,7 +87,7 @@ export const Hero = () => {
           className="text-center"
         >
           <h2 className="text-purple-300/80 text-2xl sm:text-4xl md:text-5xl font-black mb-2">
-            Hello, I am{' '}
+            Hello, I am{" "}
           </h2>
           <motion.h1
             style={{ textShadow: textGlow }}
@@ -101,7 +101,7 @@ export const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6, type: 'spring' }}
+          transition={{ delay: 0.6, type: "spring" }}
           className="relative"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -113,7 +113,7 @@ export const Hero = () => {
               scale: isHovering ? 1.05 : 1,
             }}
             transition={{
-              rotate: { duration: 10, repeat: Infinity, ease: 'easeInOut' },
+              rotate: { duration: 10, repeat: Infinity, ease: "easeInOut" },
               scale: { duration: 0.3 },
             }}
             className="relative rounded-full p-1 backdrop-blur-sm bg-gradient-to-br from-purple-500/30 to-transparent"
@@ -142,7 +142,7 @@ export const Hero = () => {
                       rotate: {
                         duration: 8 - i * 2,
                         repeat: Infinity,
-                        ease: 'linear',
+                        ease: "linear",
                       },
                       opacity: { duration: 0.5 },
                     }}
@@ -197,7 +197,7 @@ export const Hero = () => {
         </motion.p>
 
         {/* Call to action buttons */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
@@ -224,7 +224,7 @@ export const Hero = () => {
               <FiArrowRight className="text-lg" />
             </motion.span>
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Enhanced background elements */}
@@ -235,12 +235,12 @@ export const Hero = () => {
             scale: [1, 1.05, 1],
             opacity: [0.8, 0.9, 0.8],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="bg-circle absolute w-[120%] h-[120%] rounded-full left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
             background:
-              'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(91, 33, 182, 0.1) 30%, rgba(67, 20, 140, 0.05) 60%, transparent 80%)',
-            filter: 'blur(40px)',
+              "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(91, 33, 182, 0.1) 30%, rgba(67, 20, 140, 0.05) 60%, transparent 80%)",
+            filter: "blur(40px)",
           }}
         />
 
@@ -249,8 +249,8 @@ export const Hero = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              'linear-gradient(to right, #A78BFA 1px, transparent 1px), linear-gradient(to bottom, #A78BFA 1px, transparent 1px)',
-            backgroundSize: '30px 30px',
+              "linear-gradient(to right, #A78BFA 1px, transparent 1px), linear-gradient(to bottom, #A78BFA 1px, transparent 1px)",
+            backgroundSize: "30px 30px",
           }}
         />
 
@@ -261,14 +261,14 @@ export const Hero = () => {
             scale: [0.8, 1.2, 0.8],
           }}
           transition={{
-            rotate: { duration: 120, repeat: Infinity, ease: 'linear' },
-            scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' },
+            rotate: { duration: 120, repeat: Infinity, ease: "linear" },
+            scale: { duration: 20, repeat: Infinity, ease: "easeInOut" },
           }}
           className="absolute w-[200%] h-[10px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20"
           style={{
             background:
-              'linear-gradient(90deg, transparent, #A259FF, transparent)',
-            filter: 'blur(8px)',
+              "linear-gradient(90deg, transparent, #A259FF, transparent)",
+            filter: "blur(8px)",
           }}
         />
       </div>
